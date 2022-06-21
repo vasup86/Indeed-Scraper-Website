@@ -11,10 +11,8 @@ body, html{
 }
 
 .root{
-  height: 100vh;
+  height: 99vh;
   margin: 0;
-  overflow: hidden;
-  
 }
 
 .App{

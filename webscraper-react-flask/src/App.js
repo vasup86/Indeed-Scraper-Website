@@ -30,7 +30,7 @@ export default function App() {
   useEffect(()=>{
     console.log(inputData)
      //make an API call to flask
-    fetch("/scrape",{
+    fetch("/api/scrape",{
         'method':"POST",
         headers:{
           'Content-Type':"application/json"
