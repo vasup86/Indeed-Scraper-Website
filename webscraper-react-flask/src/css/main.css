@@ -1,0 +1,88 @@
+/*
+    Link: https://codepen.io/swapnet/pen/QWwPVwE
+*/
+
+body, p, input, select, button{
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: -0.2px;
+    font-size: var(--ruler);
+}
+
+div, p {
+    color: var(--color-shadow);
+    text-shadow: 1px 1px 1px var(--color-white);
+}
+
+form {
+    padding: var(--ruler);
+    width: 20rem;
+    margin: 0 auto;
+    height: 100%;
+}
+
+.segment {
+    padding: 2rem 0;
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+button, input,select {
+    border: 0;
+    outline: 0;
+    font-size: var(--ruler);
+    border-radius: var(--ruler);
+    padding: var(--ruler);
+    background-color:var(--color-bg);
+    text-shadow: 1px 1px 0 var(--color-white);
+}
+label {
+    display: block;
+    margin-bottom: 1.5rem;
+    width: 100%;
+}
+.distance, .date{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.distance > select, .date > select{
+    padding: 0.1rem 1rem 0.1rem 1rem;
+    background-color: var(--color-bg);
+    border: none;
+    outline: none;
+    text-align-last:center;
+}
+input {
+    margin-right: 0.5rem;
+    box-shadow:  inset 2px 2px 5px var(--color-shadow), inset -5px -5px 10px var(--color-white);
+    width: 100%;
+    box-sizing: border-box;
+    transition: all 0.2s ease-in-out;
+    appearance: none;
+    -webkit-appearance: none;
+}
+/* focus pseudo element is when input box is selected*/
+input:focus {
+    box-shadow:  inset 1px 1px 2px var(--color-shadow), inset -1px -1px 2px var(--color-white);
+}
+
+button {
+    color:#61677C;
+    font-weight: bold;
+    box-shadow: -5px -5px 20px var(--color-white),  5px 5px 20px var(--color-shadow);
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    font-weight: 600;
+}
+button:hover {
+    box-shadow: -2px -2px 5px var(--color-white), 2px 2px 5px var(--color-shadow);
+}
+button:active {
+    box-shadow: inset 1px 1px 2px var(--color-shadow), inset -1px -1px 2px var(--color-white);
+}
+.root .red {
+    display: block;
+    width: 100%;
+    color: var(--color-red);
+}

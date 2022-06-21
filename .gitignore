@@ -1,0 +1,29 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/webscraper-react-flask/node_modules
+/webscraper-react-flask/.pnp
+/webscraper-react-flask.pnp.js
+
+# testing
+/webscraper-react-flask/coverage
+
+# production
+/webscraper-react-flask/build
+
+# misc
+/webscraper-react-flask/.DS_Store
+/webscraper-react-flask/.env.local
+/webscraper-react-flask/.env.development.local
+/webscraper-react-flask/.env.test.local
+/webscraper-react-flask/.env.production.local
+
+/webscraper-react-flask/npm-debug.log*
+/webscraper-react-flask/yarn-debug.log*
+/webscraper-react-flask/yarn-error.log*
+
+
+/flask_backend/_pycache_
+/flask_backend/Include
+/flask_backend/Lib
+/flask_backend/Scripts
