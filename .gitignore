@@ -8,6 +8,9 @@
 # testing
 /webscraper-react-flask/coverage
 
+#build
+/webscraper-react-flask/build
+
 # misc
 /webscraper-react-flask/.DS_Store
 /webscraper-react-flask/.env.local
