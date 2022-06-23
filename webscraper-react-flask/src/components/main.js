@@ -1,5 +1,6 @@
 import React from 'react';
 import '../css/main.css'
+
 export default function Main({data, setData, setProcessData}){
     
     // <input className = "distance" type="text" placeholder = "Select distance (KM)" onChange={setData}/>

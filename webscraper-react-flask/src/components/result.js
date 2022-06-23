@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import "../css/result.css";
 
 export default function Result(props){

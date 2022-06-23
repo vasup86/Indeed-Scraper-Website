@@ -30,21 +30,24 @@ export default function App() {
   useEffect(()=>{
     console.log(inputData)
      //make an API call to flask
-    fetch("https://indeed-scraper-react.herokuapp.com/api/scrape",{
-        'method':"POST",
-        headers:{
-          'Content-Type':"application/json"
-        },
-        body:JSON.stringify(inputData)  //send our user data as POST
-      })
-      .then(res => res.json()) //get scraped data as GET
-      .then(data=>{
-        console.log(data);
-        console.log(data.results[0].company);
-        setResult(data);
-        setDisplayResult(true);
-      })
-      .catch(error => console.log(error));
+     //
+     //dont call if title is empty
+    if(inputData.title !== "" || inputData.pages>0){
+      fetch("https://indeed-scraper-react.herokuapp.com/api/scrape",{
+          'method':"POST",
+          headers:{
+            'Content-Type':"application/json"
+          },
+          body:JSON.stringify(inputData)  //send our user data as POST
+        })
+        .then(res => res.json()) //get scraped data as GET
+        .then(data=>{
+          console.log(data);
+          setResult(data);
+          setDisplayResult(true);
+        })
+        .catch(error => console.log(error));
+    }
   }, [processData])
 
   const submitData = (event)=>{
