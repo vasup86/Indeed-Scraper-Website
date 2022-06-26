@@ -29,3 +29,5 @@ The website takes in multiple user inputs such as **job title**, **location**, *
 ### Results Page
 The loading time depends on No of pages the user has decided to scrape. 
 The scraped job listings are displayed in a table for ease of access. The user can view the jobs on the brower or can export as excel sheet by clicking on 'export to CSV' button. The user can go back and search for different listing.
+
+![image](https://user-images.githubusercontent.com/83378929/175831356-efb18ad6-6a3e-404e-b063-bee76a166a56.png)
