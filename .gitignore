@@ -3,7 +3,7 @@
 # dependencies
 /webscraper-react-flask/node_modules
 /webscraper-react-flask/.pnp
-/webscraper-react-flask.pnp.js
+/webscraper-react-flask/.pnp.js
 
 # testing
 /webscraper-react-flask/coverage

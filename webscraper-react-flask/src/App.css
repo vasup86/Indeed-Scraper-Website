@@ -8,6 +8,16 @@
 
 body, html{
   background-color: var(--color-bg);
+  margin: 0;
+}
+
+body::-webkit-scrollbar{
+  width: 12px;   
+}
+
+body::-webkit-scrollbar-thumb{
+  border-radius: 15px; /*roundess of the line*/
+  border: 3px solid #bcbaba; /*creates padding around the line*/
 }
 
 .root{

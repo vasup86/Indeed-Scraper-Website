@@ -1,13 +1,18 @@
 import React from 'react';
-import '../css/main.css'
+import '../css/main.css';
+import countries from "../countries.json";
 
 export default function Main({data, setData, setProcessData}){
     
     // <input className = "distance" type="text" placeholder = "Select distance (KM)" onChange={setData}/>
     // <input className = "date" type="text" placeholder = "Select date posted" onChange={setData}/>
-
+    const loadCountries = countries.country.map((c) =>{
+        return(
+            <option key={c.key} value={c.code}>{c.name}</option>
+        );
+    })
     return(
-        <div className='root'>
+        <div className='main'>
             <form onSubmit={setProcessData}>
                 <div className = "segment">Indeed Scraper</div>
                 <label >
@@ -18,7 +23,12 @@ export default function Main({data, setData, setProcessData}){
                 </label>
                 <label>
                     <input name = "pages" type="number" placeholder = "Enter No. of Pages" onChange={setData} value={data.pages}/>
-                    </label>
+                </label>
+                <label className='country'>
+                    <select name = "country" onChange={setData} value={data.country}>
+                        {loadCountries}
+                    </select>
+                </label>
                 <label className='distance'>
                     <select name = "distance" onChange = {setData} value={data.distance}>
                         <option value="Distance in KM">Select Distance (KM)</option>

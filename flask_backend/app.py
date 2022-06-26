@@ -1,4 +1,5 @@
 from dis import dis
+from operator import truediv
 import backend 
 from flask import Flask, request, jsonify, send_from_directory
 from flask_cors import CORS, cross_origin
@@ -13,11 +14,12 @@ def add_data():
     title = request.json['title']
     location = request.json['location']
     pages = request.json['pages']
+    country = request.json['country']
     distance = request.json['distance']
     date = request.json['date']
 
     #processing data
-    dataObject = backend.Backend(title, location, pages, distance, date)
+    dataObject = backend.Backend(title, location, pages,country, distance, date)
     data = dataObject.scrape()
     #print(data)
     return jsonify(results = data)

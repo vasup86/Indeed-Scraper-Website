@@ -1,33 +1,49 @@
 
 .result{
     width: 100%;
-    height: 100%;
+    height: 98%;
     display: flex;
     align-items: center;
     justify-content: center;
     font: black;
-    flex-direction: column;
-}
-.dataTable{
-    width: 90%;
-    height: 80%;
-    overflow: scroll;
-    color: black;   
-    color:#61677C;
-    font-weight: bold;
-    box-shadow: -5px -5px 20px var(--color-white),  5px 5px 20px var(--color-shadow);
-    transition: all 0.2s ease-in-out;
-    cursor: pointer;
-    font-weight: 600;
-    
+    flex-direction: column;    
 }
 
+.dataTable{
+    width: 90%!important;
+    height: 80%;
+    overflow: scroll;
+    color:#61677C!important;
+    background-color:var(--color-bg)!important;
+    font-weight: bold;
+    box-shadow: -5px -5px 20px var(--color-white),  5px 5px 20px var(--color-shadow)!important;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    scrollbar-width: thin;
+}
+.download{
+    text-decoration: none;
+}
+.dataTable::-webkit-scrollbar{
+    width: 12px;   
+}
+.dataTable::-webkit-scrollbar-thumb{
+    border-radius: 15px; /*roundess of the line*/
+    border: 3px solid #bcbaba; /*creates padding around the line*/
+}
+.tableHead{
+    background-color:var(--color-bg)!important;
+}
 .table{
-    table-layout: fixed;
     border-collapse: collapse;
-    
 }
 
 .Buttons{
     padding-top: 15px;
+    display: flex;
+    flex-direction: row;
+}
+.downloadButton{
+    display: flex;
+    padding-left: 20px;
 }

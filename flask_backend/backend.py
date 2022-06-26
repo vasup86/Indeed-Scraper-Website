@@ -3,16 +3,17 @@ from bs4 import BeautifulSoup as BS
 
 class Backend:
 
-    def __init__(self, title, location, pages, distance, date):
+    def __init__(self, title, location, pages,country, distance, date):
         self.title = title
         self.location = location
         self.pages = int(pages)
+        self.country = country
         self.distance = distance
         self.date = date
         self.joblist = []
 
     def scrape(self):
-        url = 'https://ca.indeed.com/jobs?q='
+        url = f'https://{self.country}.indeed.com/jobs?q='
         combUrl = url + (self.title.replace(" ", "+")) + "&l=" + (self.location.replace(", ", "%2C%20"))
 
         if(self.distance== "Distance in KM" and self.date == 'D'):   #neither is selected
@@ -44,7 +45,7 @@ class Backend:
 
     
     def extract(self, page, combUrl):
-        headers = {'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'}
+        headers = {'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.0.0 Safari/537.36'}
         #{}, .format is for the the page# 
         combUrl = (combUrl+ "&start={}").format(page)
         print(combUrl)
@@ -55,14 +56,15 @@ class Backend:
     def transform(self, soup):
         ul = soup.find('ul', class_='jobsearch-ResultsList')
         li = ul.find_all('li')  #basic class name for each job post shell
-        print(len(li))
+        #print(len(li))
         i = 1
         for item in li:
             if item is None:
                 continue
             try:
                 #title = item.find('a').text.strip()  #class title, is an 'a' tag, and has title as text
-                title = item.find('h2', class_="jobTitle").text.strip("new") #class jobTitle, is an 'h2' tag, and has title as text
+                partTitle = item.find('h2', class_="jobTitle") #.text.strip("new")  #class jobTitle, is an 'h2' tag, and has title as text
+                title = partTitle.find('a').text
                 #print(title)
 
                 company = item.find("span", class_="companyName").text.strip()
@@ -74,10 +76,10 @@ class Backend:
                     jobType = item.find_all("div", class_="attribute_snippet")
                     if(len(jobType) == 1):
                         jobType = jobType[0].text.strip()
-                        print(jobType)
+                        # print(jobType)
                     else:
                         jobType = jobType[1].text.strip()
-                        print(jobType)
+                        # print(jobType)
                 except:
                     jobType = ""
 
@@ -93,7 +95,7 @@ class Backend:
                 
                 try:
                     href = item.find('a').attrs["data-jk"]
-                    link = (f'https://ca.indeed.com/viewjob?jk={href}')
+                    link = (f'https://{self.country}.indeed.com/viewjob?jk={href}')
                 except:
                     link = ""
                 

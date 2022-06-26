@@ -8,6 +8,7 @@ export default function App() {
     title: "",
     location: "",
     pages: 0,
+    country: "",
     distance:"Distance in KM",
     date:"D",
   });
@@ -18,7 +19,7 @@ export default function App() {
   const updateData = (event) => {
     setInputData(prevData => {
       return{
-        ...prevData,
+        ...prevData, //add prev data
         //[] can help to change dynamic string that is store in a var and use it as property name
         [event.target.name]: event.target.value
       }
@@ -32,7 +33,7 @@ export default function App() {
      //make an API call to flask
      //
      //dont call if title is empty
-    if(inputData.title !== "" || inputData.pages>0){
+    if(inputData.location !== "" && inputData.pages>0 && inputData.title !=="" && inputData.country!==""){
       fetch("https://indeed-scraper-react.herokuapp.com/api/scrape",{
           'method':"POST",
           headers:{
@@ -62,7 +63,11 @@ export default function App() {
   return (
     <div className="App">
       {!displayResult && <Main data = {inputData} setData = {updateData} setProcessData = {submitData}/>}
-      {displayResult && <Result data={result.results} setData = {setData}/>}
+      {displayResult && <Result name={inputData.title} data={result.results} setData = {setData}/>}
+      <div style={{paddingLeft: 16, color:"black"}}>
+        Github Repo:
+        <a href="https://github.com/vasup86/Indeed-Scraper-Website" target="_blank" rel="noopener noreferrer">link</a>
+      </div>
     </div>
   );
 }

@@ -2,7 +2,10 @@
     Link: https://codepen.io/swapnet/pen/QWwPVwE
 */
 
-body, p, input, select, button{
+.main{
+    height: 95%;
+}
+body, p, input, select, button, .download{
     font-family: 'Montserrat', sans-serif;
     letter-spacing: -0.2px;
     font-size: var(--ruler);
@@ -17,7 +20,6 @@ form {
     padding: var(--ruler);
     width: 20rem;
     margin: 0 auto;
-    height: 100%;
 }
 
 .segment {
@@ -26,7 +28,7 @@ form {
     font-size: 2.5rem;
 }
 
-button, input,select, .dataTable{
+button, input,select, .download, .dataTable{
     border: 0;
     outline: 0;
     font-size: var(--ruler);
@@ -40,13 +42,13 @@ label {
     margin-bottom: 1.5rem;
     width: 100%;
 }
-.distance, .date{
+.distance, .date, .country{
     display: flex;
     align-items: center;
     justify-content: center;
 
 }
-.distance > select, .date > select{
+.distance > select, .date > select, .country>select{
     padding: 0.1rem 1rem 0.1rem 1rem;
     background-color: var(--color-bg);
     border: none;
@@ -67,7 +69,7 @@ input:focus {
     box-shadow:  inset 1px 1px 2px var(--color-shadow), inset -1px -1px 2px var(--color-white);
 }
 
-button {
+button, .download {
     color:#61677C;
     font-weight: bold;
     box-shadow: -5px -5px 20px var(--color-white),  5px 5px 20px var(--color-shadow);
@@ -75,13 +77,13 @@ button {
     cursor: pointer;
     font-weight: 600;
 }
-button:hover {
+button:hover, .download:hover {
     box-shadow: -2px -2px 5px var(--color-white), 2px 2px 5px var(--color-shadow);
 }
-button:active {
+button:active, .download:active {
     box-shadow: inset 1px 1px 2px var(--color-shadow), inset -1px -1px 2px var(--color-white);
 }
-.root .red {
+.main .red {
     display: block;
     width: 100%;
     color: var(--color-red);
