@@ -4,7 +4,7 @@ website: https://indeed-scraper-react.netlify.app/
  
 Website (frontend) is hosted on netlify and backend is hosted on heroku.
 
-Scraping API (backend):  [link](https://indeed-scraper-react.herokuapp.com/api/scrape)   [Documentation](https://github.com/vasup86/indeed-scraper-backend)
+Scraping API (backend):  [link](https://indeed-scraper-react.herokuapp.com/api/scrape)   [Documentation](https://github.com/vasup86/indeed-scraper-API)
 
 ## About
 This project was developed using ReactJS, flask, requests and BeautifulSoup. The website works for all current Indeed worldwide domains ([List](https://www.indeed.com/worldwide)). 
